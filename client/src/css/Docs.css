@@ -1,0 +1,368 @@
+.docsRoot {
+  width: 100%;
+  min-height: 80vh;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg);
+  color: var(--text-normal);
+  border: 1px solid var(--border);
+  border-radius: 5px;
+  overflow: hidden;
+  gap: 0px;
+}
+
+/* ---------- Sidebar (desktop) ---------- */
+.docsSidebar {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: 12px 16px;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+  box-sizing: border-box;
+}
+
+.docsSidebarTop {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  flex: 1;
+  min-width: 0;
+}
+
+.docsBrand {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text-primary);
+  white-space: nowrap;
+}
+
+.docsNav {
+  display: none;
+}
+
+.docsNavItem {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border-radius: 5px;
+  background: transparent;
+  border: 1px solid transparent;
+  cursor: pointer;
+  font-size: 13.5px;
+  color: var(--text-normal);
+}
+
+.docsNavItem span {
+  white-space: nowrap;
+}
+
+.docsNavItemActive {
+  background: var(--highlight-bg);
+  color: var(--text-highlight);
+  font-weight: 600;
+}
+
+.docsThemeToggle {
+  width: 32px;
+  height: 32px;
+  min-width: 32px;
+  border-radius: 14px;
+  background: var(--surface);
+  border: 1px solid var(--orange);
+  color: var(--primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+/* ---------- Mobile tab row ---------- */
+.docsMobileTabs {
+  display: flex;
+  overflow-x: auto;
+  gap: 8px;
+  padding: 10px 16px;
+  background: var(--surface);
+  border-bottom: 1px solid var(--border);
+}
+
+.docsMobileTab {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 12px;
+  border-radius: 14px;
+  background: var(--search-bg);
+  border: 1px solid var(--border);
+  cursor: pointer;
+  white-space: nowrap;
+  flex-shrink: 0;
+  font-size: 12.5px;
+  color: var(--text-normal);
+}
+
+.docsMobileTabActive {
+  background: var(--highlight-bg);
+  color: var(--text-highlight);
+}
+
+/* Show desktop nav / hide mobile tabs above 640px */
+@media (min-width: 640px) {
+  .docsNav {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+  }
+  .docsMobileTabs {
+    display: none;
+  }
+}
+
+/* ---------- Main content ---------- */
+.docsMain {
+  flex: 1;
+  padding: 24px 20px 40px;
+  max-width: 760px;
+  box-sizing: border-box;
+}
+
+@media (min-width: 640px) {
+  .docsMain {
+    padding: 32px 40px 48px;
+  }
+}
+
+.docsSectionHeader {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.docsSectionHeader h2 {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.6px;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  margin: 0;
+}
+
+.docsTitle {
+  font-size: 24px;
+  font-weight: 700;
+  color: var(--text-primary);
+  margin: 0 0 10px;
+}
+
+.docsParagraph {
+  font-size: 14.5px;
+  line-height: 1.7;
+  color: var(--text-secondary);
+  margin: 0 0 18px;
+}
+
+.docsHint {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin: 0 0 14px;
+}
+
+.docsTagRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.docsTag {
+  padding: 5px 10px;
+  border-radius: 14px;
+  font-size: 12px;
+  font-weight: 500;
+  background: var(--card-bg);
+  color: var(--text-highlight);
+  border: 1px solid var(--orange);
+}
+
+/* ---------- File tree ---------- */
+.docsTreeBox {
+  padding: 16px;
+  border-radius: 5px;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
+}
+
+.docsTreeLine {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 4px 0;
+}
+
+.docsTreeLineNested {
+  border-left: 1px solid var(--border);
+  padding-left: 12px;
+}
+
+.docsTreeName {
+  font-size: 13px;
+  color: var(--text-normal);
+}
+
+.docsTreeFolder {
+  font-weight: 600;
+  color: var(--text-highlight);
+}
+
+.docsTreeNote {
+  font-size: 12px;
+  color: var(--text-muted);
+}
+
+/* ---------- Functions ---------- */
+.docsFnGroups {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.docsFnGroupLabel {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+}
+
+.docsFnTable {
+  border-radius: 5px;
+  overflow: hidden;
+  border: 1px solid var(--border);
+}
+
+.docsFnRow {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 12px 16px;
+}
+
+@media (min-width: 640px) {
+  .docsFnRow {
+    flex-direction: row;
+    align-items: center;
+    gap: 12px;
+  }
+}
+
+.docsFnName {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text-highlight);
+  min-width: 130px;
+}
+
+.docsFnDoes {
+  font-size: 13px;
+  color: var(--text-secondary);
+  line-height: 1.5;
+}
+
+/* ---------- Security ---------- */
+.docsSecurityBox {
+  padding: 20px;
+  margin-bottom: 24px;
+  border-radius: 5px;
+  background: var(--card-bg);
+  border: 1px solid var(--danger);
+}
+
+.docsSecurityHeading {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 12px;
+  margin-top: 20px;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.docsSecurityHeading:first-child {
+  margin-top: 0;
+}
+
+.docsSecurityDanger {
+  color: var(--danger);
+}
+
+.docsSecuritySuccess {
+  color: var(--success);
+}
+
+.docsSecurityText {
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--text-normal);
+  margin: 0 0 12px;
+}
+
+.docsInlineHighlight {
+  font-weight: 600;
+  color: var(--text-highlight);
+}
+
+.docsCodeBlock {
+  padding: 16px;
+  margin-top: 12px;
+  border-radius: 5px;
+  background: var(--search-bg);
+  border: 1px solid var(--border);
+  overflow-x: auto;
+}
+
+.docsCodeBlock pre {
+  font-size: 12.5px;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  white-space: pre-wrap;
+  margin: 0;
+}
+
+.docsStatusLine {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 12.5px;
+  color: var(--text-muted);
+}
+
+/* ---------- Learnings ---------- */
+.docsLearningsList {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.docsLearningRow {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+}
+
+.docsLearningRow svg {
+  margin-top: 3px;
+  flex-shrink: 0;
+}
+
+.docsLearningRow p {
+  font-size: 14px;
+  line-height: 1.7;
+  color: var(--text-normal);
+  margin: 0;
+}
