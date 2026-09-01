@@ -1,9 +1,0 @@
-.inp{
-  background-color: var(--surface);
-  color: var(--primary);
-  border: 1px solid var(--border);
-  border-radius: 5px;
-  max-width: 300px;
-  padding: 3%;
-  background-color: var(--surface);
-}
