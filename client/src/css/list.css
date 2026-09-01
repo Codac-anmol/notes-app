@@ -1,0 +1,29 @@
+.list{
+    border: 1px solid var(--border);
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    padding: 1%;
+}
+
+.name{
+    font-size:1.3rem;
+    font-size: 1.5rem;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.date{
+    font: 200;
+    font-size: 0.8rem;
+    justify-self: end;
+}
+
+.selected{
+    background-color: var(--primary);
+    color: var(--orange);
+    border-radius: 2px;
+    padding: 5px;
+
+}
