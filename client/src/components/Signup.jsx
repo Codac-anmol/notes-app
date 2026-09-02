@@ -14,7 +14,7 @@ const Signup = () => {
   const [lPass, setlPass] = useState("")
   const [lName, setlName] = useState("")
   const { user,setUser,notes} = useContext(UserContext)
-
+const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
 
   return (
     <div className='loginBox'>
@@ -30,7 +30,7 @@ const Signup = () => {
 
           method: 'post',
 
-          url: 'http://localhost:3000/user/register',
+          url: `${BACKEND_URL}/user/register`,
 
           data: {
             email: lEmail,

@@ -12,7 +12,7 @@ const Login = () => {
   const [lEmail, setlEmail] = useState("")
   const [lPass, setlPass] = useState("")
   const { user,setUser,notes} = useContext(UserContext)
-
+const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
 
 
   return (
@@ -27,7 +27,7 @@ const Login = () => {
 
           method: 'post',
 
-          url: 'http://localhost:3000/user/login',
+          url: `${BACKEND_URL}/user/login`,
 
           data: {
             email: lEmail,

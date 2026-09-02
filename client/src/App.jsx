@@ -9,7 +9,11 @@ import NotesWindow from './components/NotesWindow'
 import Docs from './components/docs'
 import axios from 'axios'
 
+
+
+
 function App() {
+  const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
   const [selected, setSelected] = useState();
   const [user, setUser] = useState()
   const [notes, setNotes] = useState([])
@@ -21,7 +25,7 @@ function App() {
       if (!user) {
         try {
           const token = localStorage.getItem("Authorization");
-          const usr = await axios.get("http://localhost:3000/user", {
+          const usr = await axios.get(`${BACKEND_URL}/user`, {
             headers: {
               Authorization: token,
             }
