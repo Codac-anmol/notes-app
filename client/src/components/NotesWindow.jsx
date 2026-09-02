@@ -48,7 +48,7 @@ const NotesWindow = (props) => {
             }
           );
 
-          return (<List id={note._id} title={note.title} date={formattedDate} setSelected={setSelected} selected={selected} />)
+          return (<List id={note._id} key={note._id} title={note.title} date={formattedDate} setSelected={setSelected} selected={selected} />)
         })}</div>
       < Textarea setTitle={setCurrentTitle} currentTitle={currentTitle} setCurrentContennt={setCurrentContent} currentContent={currentContent} />
     </div>

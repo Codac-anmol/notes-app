@@ -3,7 +3,7 @@ import '../css/Controls.css'
 import UserContext from './UserContext'
 import axios from 'axios'
 import { data, Navigate } from 'react-router-dom'
-
+const BACKEND_URL = import.meta.env.VITE_BACKEND_URL;
 const Controls = () => {
 
   const { getUser, selected, setUser, notes, setNotes, currentContent, user, currentTitle, setSelected, setCurrentContent, setCurrentTitle } = useContext(UserContext)
@@ -16,7 +16,7 @@ const Controls = () => {
           <button className='btns'
             onClick={async (e) => {
               const token = localStorage.getItem("Authorization")
-              const res = await axios.delete("http://localhost:3000/notes/del",
+              const res = await axios.delete(`${BACKEND_URL}/notes/del`,
                 {
                   headers: {
                     Authorization: token,
@@ -39,7 +39,7 @@ const Controls = () => {
           <><button className='btns' onClick={() => { setCurrentContent((notes.find((note) => note._id === selected)).content); setCurrentTitle((notes.find((note) => note._id === selected)).title) }}>cancel</button>
             <button className='btns' onClick={async (e) => {
               const token = localStorage.getItem("Authorization")
-              const res = await axios.patch("http://localhost:3000/notes/update",
+              const res = await axios.patch(`${BACKEND_URL}/notes/update`,
                 {
 
                   id: selected,
@@ -73,7 +73,7 @@ const Controls = () => {
         :
         <><button className='btns' onClick={async () => {
           const token = localStorage.getItem("Authorization")
-          const newNote = await axios.post("http://localhost:3000/notes/create",
+          const newNote = await axios.post(`${BACKEND_URL}/notes/create`,
             {
               title: currentTitle,
               content: currentContent
